@@ -15,7 +15,15 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from gra_rpg_app.views import MainView, LoginView, RegisterView, LogoutView, ShopView, InnView, Dungeon1View
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', MainView.as_view(), name='main'),
+    path('login/', LoginView.as_view(), name='login'),
+    path('logout/', LogoutView.as_view(), name='logout'),
+    path('register/', RegisterView.as_view(), name='register'),
+    path('shop/', ShopView.as_view(), name='shop'),
+    path('inn/', InnView.as_view(), name='inn'),
+    path('dungeon1/', Dungeon1View.as_view(), name='dungeon1'),
 ]

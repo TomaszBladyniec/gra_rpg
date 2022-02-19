@@ -20,7 +20,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-#9kfg#phjv9bx3mkl=7wxnz#gtk)qs1fwdfpf1=u95753&r_iy'
+SECRET_KEY = 'django-insecure-7kt4*=#mpoej82@x(ofihtb&r)n(cu98o_$nwd7@98b2d7+r3^'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -76,8 +76,11 @@ WSGI_APPLICATION = 'gra_rpg.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'HOST': '127.0.0.1',
+        'NAME': 'gra_rpg',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'USER': 'postgres',
+        'PASSWORD': 'coderslab',
     }
 }
 
