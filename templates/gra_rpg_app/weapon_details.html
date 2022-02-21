@@ -1,0 +1,20 @@
+{% extends 'gra_rpg_app/base.html' %}
+{% block title1 %}Szczegóły broni{% endblock %}
+{% block title2 %}Szczegóły broni{% endblock %}
+{% block background %}https://i.pinimg.com/originals/51/fc/3a/51fc3a8475005e95164021405c360d09.jpg{%  endblock %}
+
+{% block content %}
+    Nazwa broni: {{ weapon.name }}<br>
+    Siła: {{ weapon.damage }}<br>
+    Szansa trafienia: {{ weapon.chance_of_hit }}
+    Cena: {{ weapon.price }} złota<br>
+    <center>
+    <form method="post">
+        {% csrf_token %}
+        <input type="hidden" name="weapon_bought" value="{{ weapon.id }}">
+        <input type="submit" value="Kup">
+            <br>
+
+    <a href="/shop/">Wróć do sklepu</a>
+        </center>
+{% endblock %}

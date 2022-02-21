@@ -21,11 +21,14 @@
     <div class="bgimg w3-display-container w3-animate-opacity w3-text-white">
 
         <div class="w3-display-topleft w3-padding-large w3-xlarge">
-            Gra RPG Tomka Bladyńca
+            Witaj {{ user.first_name }} {{ user.last_name }}<br>
+            Złoto: {{ profile.gold }}<br>
+            Zdrowie: {{ profile.health }}<br>
+            Doświadczenie: {{ profile.experience }}<br>
         </div>
 
         <div class="w3-display-topmiddle">
-            <h1 class="w3-jumbo w3-animate-top">{% block title2 %}{% endblock %}</h1>
+            <h1 class="w3-jumbo w3-animate-top"><center>{% block title2 %}{% endblock %}</center></h1>
             <hr class="w3-border-grey" style="margin:auto;width:40%">
             <p class="w3-center w3-xlarge">{% block content %}{% endblock %}</p>
         </div>
@@ -34,7 +37,8 @@
 
 
         <div class="w3-display-bottomleft w3-padding-large">
-            <a href="/logout/">Wyloguj</a>
+            <a href="/logout/">Wyloguj</a><br>
+            <a href="/delete_account/">Usuń konto</a>
         </div>
     </div>
 </body>

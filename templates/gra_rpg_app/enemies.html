@@ -1,0 +1,17 @@
+{% extends 'gra_rpg_app/base.html' %}
+{% block title1 %}Przeciwnicy{% endblock %}
+{% block title2 %}Przeciwnicy{% endblock %}
+{% block background %}https://wallpapercave.com/wp/wp3021376.jpg{%  endblock %}
+
+{% block content %}
+
+    <h1>Lista przeciwników</h1>
+    <ul>
+    {% for ene in enemy %}
+        <li><a href="/enemies/{{ ene.id }}">{{ene.name}}</a></li>
+    {% endfor %}
+    </ul>
+
+
+    <a href="/">Wróć do wioski</a>
+{% endblock %}

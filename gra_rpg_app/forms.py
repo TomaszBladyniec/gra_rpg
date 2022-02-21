@@ -4,16 +4,25 @@ import django.forms as forms
 
 
 class LoginForm(forms.Form):
+    """
+    Formularz logowania
+    """
     login = forms.CharField(label='Nazwa użytkownika')
     password = forms.CharField(label='Hasło', widget=forms.PasswordInput)
 
 
 def validate_username_is_not_taken(value):
+    """
+    Sprawdzenie, czy nazwa użytkownika nie jest już zajęta
+    """
     if User.objects.filter(username=value):
         raise ValidationError('Ten login jest już zajęty')
 
 
 class RegisterForm(forms.Form):
+    """
+    Formularz rejestracji
+    """
     username = forms.CharField(
         max_length=50,
         label='Nazwa użytkownika',
@@ -26,6 +35,9 @@ class RegisterForm(forms.Form):
     email = forms.EmailField(label='Adres e-mail')
 
     def clean(self):
+        """
+        Sprawdzenie, czy hasła podane przy rejestracji są takie same
+        """
         cleaned_data = super().clean()
         if cleaned_data['pass1'] != cleaned_data['pass2']:
             raise ValidationError('Hasła nie są takie same!')

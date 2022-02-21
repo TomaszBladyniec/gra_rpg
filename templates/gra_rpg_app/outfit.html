@@ -1,0 +1,32 @@
+{% extends 'gra_rpg_app/base.html' %}
+{% block title1 %}Ekwipunek{% endblock %}
+{% block title2 %}Ekwipunek{% endblock %}
+{% block background %}https://cdn1.epicgames.com/ue/item/Store_MedievalWeapons_screenshot_4-1920x1080-1b8fbf936493251e398c99e95f0a9b04.png{%  endblock %}
+
+{% block content %}
+    <center>
+    <form method="post">
+        {% csrf_token %}
+
+    Której broni chcesz używać?
+        <select name="weapon_choice">
+            {% for weapon in weapons %}
+                <option value ="{{ weapon.id }}">{{ weapon.name }}</option>
+            {% endfor %}}
+        </select><br>
+
+        Którego pancerza chcesz używać?
+        <select name="armor_choice">
+            {% for armor in armors %}
+                <option value ="{{ armor.id }}">{{ armor.name }}</option>
+            {% endfor %}}
+        </select><br>
+        <input type="submit" value="Wybierz"><br>
+    </form>
+
+        Obecnie masz wybraną broń: {{ chosen_weapon_name }}</a><br>
+        Obecnie masz wybrany pancerz: {{ chosen_armor_name }}</a><br>
+
+    <a href="/">Wróć do wioski</a>
+    </center>
+{% endblock %}

@@ -1,0 +1,18 @@
+{% extends 'gra_rpg_app/base.html' %}
+{% block title1 %}Medyk{% endblock %}
+{% block title2 %}Medyk{% endblock %}
+{% block background %}https://w.wallha.com/ws/7/FW5JEXUd.jpg{%  endblock %}
+
+{% block content %}
+Leczenie 10 punktów zdrowia kosztuje 50 złota.
+
+    <center>
+    <form method="post">
+        {% csrf_token %}
+        <input type="hidden" name="health_bought" value="health_bought">
+        <input type="submit" value="Lecz">
+            <br>
+
+    <a href="/">Wróć do wioski</a>
+        </center>
+{% endblock %}

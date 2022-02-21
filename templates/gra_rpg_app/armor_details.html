@@ -1,0 +1,20 @@
+{% extends 'gra_rpg_app/base.html' %}
+{% block title1 %}Szczegóły pancerzy{% endblock %}
+{% block title2 %}Szczegóły pancerzy{% endblock %}
+{% block background %}https://i.pinimg.com/originals/51/fc/3a/51fc3a8475005e95164021405c360d09.jpg{%  endblock %}
+
+{% block content %}
+    Nazwa pancerza: {{ armor.name }}<br>
+    Zmniejszenie siły ciosów: {{ armor.damage_reduction }}<br>
+    Cena: {{ armor.price }} złota<br>
+
+    <center>
+    <form method="post">
+        {% csrf_token %}
+        <input type="hidden" name="armor_bought" value="{{ armor.id }}">
+        <input type="submit" value="Kup">
+            <br>
+
+    <a href="/shop/">Wróć do sklepu</a>
+        </center>
+{% endblock %}

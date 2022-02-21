@@ -1,0 +1,12 @@
+{% extends 'gra_rpg_app/base.html' %}
+{% block title1 %}Lochy{% endblock %}
+{% block title2 %}Lochy{% endblock %}
+{% block background %}https://static.wikia.nocookie.net/darksouls/images/6/66/15450894913_9504d773cb_o.jpg{%  endblock %}
+
+{% block content %}
+    Zwycięstwo! {{ enemy.name }} został pokonany.<br>
+    Dostajesz {{ enemy.gold }} złota i {{ enemy.experience }} punktów doświadczenia.<br>
+
+    <a href="/">Wróć do wioski</a>
+
+{% endblock %}

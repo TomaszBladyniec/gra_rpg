@@ -4,10 +4,20 @@
 {% block background %}https://i.pinimg.com/originals/51/fc/3a/51fc3a8475005e95164021405c360d09.jpg{%  endblock %}
 
 {% block content %}
-    Jesteś w sklepie. Możesz tu kupić broń:<br>
 
+    <h1>Bronie</h1>
+    <ul>
+    {% for wea in weapon %}
+        <li><a href="/shop/weapon_details/{{ wea.id }}">{{wea.name}}</a> - cena {{ wea.price }} złota</li>
+    {% endfor %}
+    </ul>
 
-
+    <h1>Pancerze</h1>
+    <ul>
+    {% for arm in armor %}
+        <li><a href="/shop/armor_details/{{ arm.id }}">{{arm.name}}</a> - cena {{ arm.price }} złota</li>
+    {% endfor %}
+    </ul>
 
     <a href="/">Wróć do wioski</a>
 {% endblock %}

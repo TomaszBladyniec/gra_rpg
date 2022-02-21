@@ -1,0 +1,16 @@
+{% extends 'gra_rpg_app/base.html' %}
+{% block title1 %}Szczegóły przeciwnika{% endblock %}
+{% block title2 %}Szczegóły przeciwnika{% endblock %}
+{% block background %}https://wallpapercave.com/wp/wp3021376.jpg{%  endblock %}
+
+{% block content %}
+    Nazwa przeciwnika: {{ enemy.name }}<br>
+    Siła ataku: {{ enemy.damage }}<br>
+    Szansa być trafionym przez przeciwnika: {{ enemy.chance_of_hit }}<br>
+    Zdobyte złoto za pokonanie: {{ enemy.gold }} złota<br>
+    Zdobyte doświadczenie za pokonanie: {{ enemy.experience }} punktów<br>
+
+    <center>
+    <a href="/enemies">Wróć do bestiariusza</a>
+        </center>
+{% endblock %}

@@ -1,0 +1,12 @@
+{% extends 'gra_rpg_app/base.html' %}
+{% block title1 %}Koniec gry{% endblock %}
+{% block title2 %}Koniec gry{% endblock %}
+{% block background %}https://static.wikia.nocookie.net/darksouls/images/6/66/15450894913_9504d773cb_o.jpg{%  endblock %}
+
+{% block content %}
+    Przegrana! {{ enemy.name }} Cię pokonał.<br>
+    W sumie udało się zdobyć {{ profile.experience }} punktów doświadczenia.<br>
+
+    <a href="/">Wróć do wioski</a>
+
+{% endblock %}
